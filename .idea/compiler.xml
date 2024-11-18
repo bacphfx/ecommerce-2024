@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="EcommerceBackend" />
+        <module name="EcommerceFrontend" />
+        <module name="EcommerceCommon" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="EcommerceBackend" options="-parameters" />
+      <module name="EcommerceCommon" options="-parameters" />
+      <module name="EcommerceFrontend" options="-parameters" />
+      <module name="EcommerceWebParent" options="-parameters" />
+    </option>
+  </component>
+</project>

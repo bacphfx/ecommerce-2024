@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head th:replace="fragments :: page_head('Ecommerce App', 'none')"/>
+
+<body>
+<div class="container-fluid">
+    <div th:replace="navigation :: header_menu"></div>
+    <div th:replace="navigation :: search_nav"></div>
+    <div>
+        <h1>Shopping by Categories</h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-2" th:each="cate : ${categories}">
+            <div><img th:src="@{${cate.imagePath}}" width="80"/></div>
+            <div>
+                <a th:href="@{'/c/' + ${cate.alias}}">[[${cate.name}]]</a>
+            </div>
+        </div>
+    </div>
+    <div th:replace="navigation :: footer_menu"></div>
+</div>
+</body>
+</html>

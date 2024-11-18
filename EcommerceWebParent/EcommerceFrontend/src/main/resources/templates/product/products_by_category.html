@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head th:replace="fragments :: page_head(${pageTitle}, 'none')"/>
+
+<body>
+<div class="container-fluid">
+    <div th:replace="navigation :: header_menu"></div>
+    <div th:replace="navigation :: search_nav"></div>
+    <div th:replace="breadcrumb :: content"/>
+
+    <div class="row text-center">
+        <th:block th:each="cate : ${category.children}">
+            <div class="col" th:if="${cate.enabled == true}">
+                <a th:href="@{'/c/' + ${cate.alias}}">
+                    <img th:src="@{${cate.imagePath}}" height="100"/>
+                    </br>
+                    <b>[[${cate.name}]]</b>
+                </a>
+            </div>
+        </th:block>
+    </div>
+
+    <div class="row mt-3">
+        <th:block th:each="product : ${products}">
+            <div th:replace="product/product_fragments :: content"></div>
+        </th:block>
+    </div>
+
+    <div th:replace="fragments :: pagination('/c/' + ${category.alias}, 'product')"/>
+</div>
+
+<div th:replace="navigation :: footer_menu"></div>
+</div>
+</body>
+</html>

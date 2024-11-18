@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<span th:fragment="codSupported">
+    <a th:if="${rate.codSupported}" class="fa-solid fa-hand-holding-dollar fa-xl icon-green"
+       th:href="@{'/shipping_rates/' + ${rate.id} + '/cod_supported/false'}"
+       title="Disable cod supported" ></a>
+    <a th:if="${!rate.codSupported}" class="fa-solid fa-hand-holding-dollar fa-xl icon-dark"
+       th:href="@{'/shipping_rates/' + ${rate.id} + '/cod_supported/true'}"
+       title="Enabled cod supported" ></a>
+</span>
+</body>
+</html>
