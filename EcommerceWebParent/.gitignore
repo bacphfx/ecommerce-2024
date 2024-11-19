@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+/EcommerceWebParent/EcommerceBackend/src/main/resources/application.properties
+
+/EcommerceWebParent/EcommerceFrontend/src/main/resources/application.yml
