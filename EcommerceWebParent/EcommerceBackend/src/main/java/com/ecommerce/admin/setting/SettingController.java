@@ -1,6 +1,7 @@
 package com.ecommerce.admin.setting;
 
 import com.ecommerce.admin.FileUploadUtil;
+import com.ecommerce.common.Constants;
 import com.ecommerce.common.entity.Currency;
 import com.ecommerce.common.entity.setting.Setting;
 import jakarta.servlet.http.HttpServletRequest;
@@ -36,6 +37,8 @@ public class SettingController {
         settings.forEach(setting -> {
             model.addAttribute(setting.getKey(), setting.getValue());
         });
+
+        model.addAttribute("S3_BASE_URI", Constants.S3_BASE_URI);
 
         return "settings/settings";
     }

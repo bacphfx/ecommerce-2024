@@ -1,5 +1,6 @@
 package com.ecommerce.common.entity;
 
+import com.ecommerce.common.Constants;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -88,7 +89,7 @@ public class Category extends IdBasedEntity{
     @Transient
     public String getImagePath(){
         if (this.id == null) return "/images/image-thumbnail.png";
-        return "/category-image/" + this.id + "/" + this.image;
+        return Constants.S3_BASE_URI + "/category-image/" + this.id + "/" + this.image;
     }
 
     @Transient

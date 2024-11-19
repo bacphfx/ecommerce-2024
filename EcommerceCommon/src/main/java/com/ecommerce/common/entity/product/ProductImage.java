@@ -1,5 +1,6 @@
 package com.ecommerce.common.entity.product;
 
+import com.ecommerce.common.Constants;
 import com.ecommerce.common.entity.IdBasedEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -28,6 +29,6 @@ public class ProductImage extends IdBasedEntity {
 
     @Transient
     public String getImagePath() {
-        return "/product-images/" + product.getId() + "/extras/" + this.name;
+        return Constants.S3_BASE_URI + "/product-images/" + product.getId() + "/extras/" + this.name;
     }
 }

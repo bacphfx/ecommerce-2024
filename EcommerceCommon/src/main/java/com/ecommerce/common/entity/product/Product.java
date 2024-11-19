@@ -1,5 +1,6 @@
 package com.ecommerce.common.entity.product;
 
+import com.ecommerce.common.Constants;
 import com.ecommerce.common.entity.Brand;
 import com.ecommerce.common.entity.Category;
 import com.ecommerce.common.entity.IdBasedEntity;
@@ -97,7 +98,7 @@ public class Product extends IdBasedEntity {
     @Transient
     public String getMainImagePath(){
         if (this.id == null) return "/images/image-thumbnail.png";
-        return "/product-images/" + this.id + "/" + this.mainImage;
+        return Constants.S3_BASE_URI + "/product-images/" + this.id + "/" + this.mainImage;
     }
 
     public boolean containsImageName(String fileName) {

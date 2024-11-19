@@ -4,7 +4,7 @@
 <div th:fragment="header_menu" th:remove="tag">
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <a th:href="@{/}" class="navbar-brand">
-            <img th:src="@{${SITE_LOGO}}">
+            <img th:src="@{${S3_BASE_URI + SITE_LOGO}}">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavbar, #searchNavbar">
             <span class="navbar-toggler-icon"></span>

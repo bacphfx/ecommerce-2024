@@ -1,5 +1,6 @@
 package com.ecommerce.common.entity;
 
+import com.ecommerce.common.Constants;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -43,6 +44,6 @@ public class Brand extends IdBasedEntity{
     @Transient
     public String getLogoPath(){
         if (this.id == null) return "/images/image-thumbnail.png";
-        return "/brand-logo/" + this.id + "/" + this.logo;
+        return Constants.S3_BASE_URI + "/brand-logo/" + this.id + "/" + this.logo;
     }
 }

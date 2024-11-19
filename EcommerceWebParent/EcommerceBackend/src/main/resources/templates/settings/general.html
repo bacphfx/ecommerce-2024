@@ -22,7 +22,7 @@
         <div class="form-group row">
             <label class="col-sm-4 col-form-label">Site Logo:</label>
             <div class="col-sm-8">
-                <img id="thumbnail" alt="Site logo preview" th:src="@{${SITE_LOGO}}" class="img-fluid"
+                <img id="thumbnail" alt="Site logo preview" th:src="@{${S3_BASE_URI + SITE_LOGO}}" class="img-fluid"
                      width="150" height="70">
                 <input type="file" id="imageUpload" accept="image/png, image/jpeg"
                        name="imageUpload" class="ml-2"/>
